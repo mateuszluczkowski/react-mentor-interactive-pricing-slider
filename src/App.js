@@ -1,13 +1,12 @@
-import styled from "styled-components";
-
-const TestComponent = styled.div`
-   width: 100px;
-   height: 100px;
-   font-family: ${({ theme }) => theme.font.family};
-`;
+import { Container, Header, PricingWindow } from "components";
 
 function App() {
-   return <TestComponent>Hello!</TestComponent>;
+   return (
+      <Container>
+         <Header />
+         <PricingWindow />
+      </Container>
+   );
 }
 
 export default App;

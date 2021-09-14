@@ -22,7 +22,7 @@ const theme = {
       },
       neutral: {
          // (Pricing Component Background)
-         white: "hsl(174, 77%, 80%)",
+         white: "hsl(0, 0%, 100%)",
          //(Main Background)
          veryPaleBlue: "hsl(230, 100%, 99%)",
          //  (Empty Slider Bar)
