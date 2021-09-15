@@ -62,7 +62,7 @@ export const ChceckIcon = styled.div`
    height: 10px;
    width: 10px;
    margin-right: 15px;
-   background: url(/img/icon-check.svg);
+   background: url(./img/icon-check.svg);
    background-repeat: no-repeat;
    background-position: center;
 `;
