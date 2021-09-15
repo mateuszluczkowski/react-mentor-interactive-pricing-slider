@@ -6,6 +6,7 @@ import {
    DiscountText,
 } from "./TogglerRow.css";
 const TogglerRow = ({ handleToggler, toggler }) => {
+   const windowWidth = window.innerWidth;
    return (
       <WrapperToggler>
          <Option>Monthly Billing</Option>
@@ -13,7 +14,9 @@ const TogglerRow = ({ handleToggler, toggler }) => {
             <TogglerCircle toggler={toggler} />
          </Toggler>
          <Option>Yearly Billing</Option>
-         <DiscountText>25% discount</DiscountText>
+         <DiscountText>{`${
+            windowWidth < 768 ? "25%" : "25% discount"
+         }`}</DiscountText>
       </WrapperToggler>
    );
 };

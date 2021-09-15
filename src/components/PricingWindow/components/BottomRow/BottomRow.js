@@ -1,5 +1,6 @@
 import {
-   WrapperBottom,
+   BottomWrapper,
+   ButtonWrapper,
    List,
    ListElement,
    ChceckIcon,
@@ -7,7 +8,7 @@ import {
 } from "./BottomRow.css";
 
 const BottomRow = () => (
-   <WrapperBottom>
+   <BottomWrapper>
       <List>
          <ListElement>
             <ChceckIcon />
@@ -22,7 +23,9 @@ const BottomRow = () => (
             Email reports
          </ListElement>
       </List>
-      <Button>Start my trial</Button>
-   </WrapperBottom>
+      <ButtonWrapper>
+         <Button>Start my trial</Button>
+      </ButtonWrapper>
+   </BottomWrapper>
 );
 export default BottomRow;

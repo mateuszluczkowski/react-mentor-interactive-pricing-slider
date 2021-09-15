@@ -1,18 +1,17 @@
 import styled from "styled-components";
-export const Row = styled.div`
-   display: flex;
-   flex-basis: 100%;
-`;
-export const BarWrapper = styled(Row)`
-   padding: 25px 50px;
-`;
+
 export const Bar = styled.div`
-   position: relative;
+   margin: 30px 0;
    flex-basis: 100%;
+   position: relative;
    display: flex;
    border-radius: 10px;
    height: 10px;
    background-color: ${({ theme }) => theme.colors.neutral.lightGrayishBlue};
+   @media (max-width: 768px) {
+      order: 2;
+      margin: 0px;
+   }
 `;
 export const GreenBar = styled.div`
    background-color: ${({ theme }) => theme.colors.primary.softCyan};
@@ -42,6 +41,10 @@ export const Handle = styled.div`
    &:active {
       background-color: #23aea1;
       cursor: grab;
+   }
+   @media (max-width: 768px) {
+      width: 52px;
+      height: 52px;
    }
 `;
 export const RightArrow = styled.div`

@@ -1,12 +1,5 @@
 import { useRef } from "react";
-import {
-   BarWrapper,
-   Bar,
-   GreenBar,
-   Handle,
-   RightArrow,
-   LeftArrow,
-} from "./BarRow.css";
+import { Bar, GreenBar, Handle, RightArrow, LeftArrow } from "./BarRow.css";
 
 const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
    const emptyBarRef = useRef();
@@ -45,7 +38,7 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
    };
    initEvents();
    return (
-      <BarWrapper>
+      <>
          <Bar ref={emptyBarRef}>
             <GreenBar ref={greenBarRef} />
             <Handle onMouseDown={handleMouseClick} ref={handleRef}>
@@ -53,7 +46,7 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
                <RightArrow />
             </Handle>
          </Bar>
-      </BarWrapper>
+      </>
    );
 };
 export default SliderRow;

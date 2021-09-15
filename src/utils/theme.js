@@ -2,6 +2,7 @@ const theme = {
    font: {
       size: "15px",
       family: "'Manrope', sans-serif",
+      priceFontSize: 43,
    },
    layout: {
       mobile: "375px",
