@@ -2,7 +2,7 @@ import styled from "styled-components";
 const Container = styled.div`
    width: ${({ theme }) => theme.layout.desktop};
    max-width: 100vw;
-   background-image: url("/img/bg-pattern.svg");
+   background-image: url("./img/bg-pattern.svg");
    background-repeat: no-repeat;
    position: relative;
    top: 0;

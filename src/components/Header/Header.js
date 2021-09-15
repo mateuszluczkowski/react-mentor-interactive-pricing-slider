@@ -4,7 +4,7 @@ const HeaderWrapper = styled.div`
    position: relative;
    width: 100%;
    padding: 100px 0;
-   background-image: url("/img/pattern-circles.svg");
+   background-image: url("./img/pattern-circles.svg");
    background-position: center;
    background-repeat: no-repeat;
    text-align: center;
