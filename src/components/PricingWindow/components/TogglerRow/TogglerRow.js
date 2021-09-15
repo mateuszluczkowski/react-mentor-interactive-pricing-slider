@@ -10,7 +10,7 @@ const TogglerRow = ({ handleToggler, toggler }) => {
    return (
       <WrapperToggler>
          <Option>Monthly Billing</Option>
-         <Toggler onClick={handleToggler}>
+         <Toggler onClick={handleToggler} toggler={toggler}>
             <TogglerCircle toggler={toggler} />
          </Toggler>
          <Option>Yearly Billing</Option>

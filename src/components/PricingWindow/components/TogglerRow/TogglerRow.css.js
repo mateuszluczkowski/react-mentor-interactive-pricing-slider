@@ -21,15 +21,14 @@ export const Toggler = styled.div`
    margin: 0 5px;
    width: 40px;
    height: 22px;
-   background-color: ${({ theme }) =>
-      theme.colors.neutral.lightGrayishBlueSecond};
+   background-color: ${({ theme, toggler }) =>
+      toggler
+         ? theme.colors.primary.softCyan
+         : theme.colors.neutral.lightGrayishBlueSecond};
    border-radius: 10px;
    padding: 3px;
    transition: 0.3s;
    cursor: pointer;
-   &:hover {
-      background-color: ${({ theme }) => theme.colors.primary.softCyan};
-   }
    @media (max-width: 768px) {
       width: 45px;
       height: 28px;
