@@ -15,14 +15,15 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
 
       return handlePosition;
    };
-   const handleDragging = (e) => {
+   const mouseMove = (e) => {
       if (dragging) {
-         if (e.type === "touchmove" || e.type === "touchstart")
-            e.pageX = e.touches[0].pageX;
          document.body.style.cursor = "grab";
          const barWidth = emptyBarRef.current.getBoundingClientRect().width;
-
-         const handlePosition = getHandlePosition(e.pageX, barWidth);
+         const pageX =
+            e.type === "touchstart" || "touchmove"
+               ? e.touches[0].pageX
+               : e.pageX;
+         const handlePosition = getHandlePosition(pageX, barWidth);
          const percent = handlePosition / barWidth;
          const subscriptionType = Math.floor(percent * numberOfOptions);
          handleBarStatus(subscriptionType);
@@ -30,16 +31,27 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
          greenBarRef.current.style.width = `${handlePosition}px`;
       } else return;
    };
-
-   const handleFocus = (e) => (dragging = true);
+   const touchMove = (e) => {
+      console.log(e.type);
+      if (dragging) {
+         const barWidth = emptyBarRef.current.getBoundingClientRect().width;
+         const handlePosition = getHandlePosition(e.touches[0].pageX, barWidth);
+         const percent = handlePosition / barWidth;
+         const subscriptionType = Math.floor(percent * numberOfOptions);
+         handleBarStatus(subscriptionType);
+         handleRef.current.style.left = `${handlePosition}px`;
+         greenBarRef.current.style.width = `${handlePosition}px`;
+      } else return;
+   };
+   const handleMouseClick = (e) => (dragging = true);
 
    const initEvents = () => {
-      window.addEventListener("mousemove", handleDragging);
+      window.addEventListener("mousemove", mouseMove);
       window.addEventListener("mouseup", () => {
          dragging = false;
          document.body.style.cursor = "auto";
       });
-      window.addEventListener("touchmove", handleDragging);
+      window.addEventListener("touchmove", mouseMove);
       window.addEventListener("touchend", () => (dragging = false));
    };
    initEvents();
@@ -48,8 +60,8 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
          <Bar ref={emptyBarRef}>
             <GreenBar ref={greenBarRef} />
             <Handle
-               onMouseDown={handleFocus}
-               onTouchStart={handleFocus}
+               onMouseDown={handleMouseClick}
+               onTouchStart={handleMouseClick}
                ref={handleRef}
             >
                <LeftArrow />
