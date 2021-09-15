@@ -1,4 +1,5 @@
 {
+   "homepage": "https://mateuszluczkowski.github.io/react-mentor-interactive-pricing-slider/",
    "name": "interactive-pricing-slider",
    "version": "0.1.0",
    "private": true,
@@ -37,6 +38,5 @@
          "last 1 firefox version",
          "last 1 safari version"
       ]
-   },
-   "homepage": "https://mateuszluczkowski.github.io/react-mentor-interactive-pricing-slider/"
+   }
 }
