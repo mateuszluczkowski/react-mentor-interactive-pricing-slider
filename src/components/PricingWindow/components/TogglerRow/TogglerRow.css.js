@@ -14,9 +14,8 @@ export const WrapperToggler = styled(Row)`
    font-weight: 600;
 `;
 export const Toggler = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: ${({ toggler }) => (toggler ? "flex-end" : "flex-start")};
+   position: relative;
+   display: block;
    margin: 0 5px;
    width: 40px;
    height: 22px;
@@ -24,15 +23,22 @@ export const Toggler = styled.div`
       theme.colors.neutral.lightGrayishBlueSecond};
    border-radius: 10px;
    padding: 3px;
-   transition: 1s;
+   transition: 0.3s;
    cursor: pointer;
+   &:hover {
+      background-color: ${({ theme }) => theme.colors.primary.softCyan};
+   }
 `;
 export const TogglerCircle = styled.div`
    width: 15px;
    height: 15px;
    background-color: white;
    border-radius: 50%;
-   position: relative;
+   position: absolute;
+   left: ${({ toggler }) => (toggler ? "21px" : "4px")};
+   top: 50%;
+   transform: translateY(-50%);
+   transition: 0.3s;
 `;
 export const Option = styled.div`
    margin: 0 5px;

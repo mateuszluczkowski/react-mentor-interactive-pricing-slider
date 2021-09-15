@@ -36,6 +36,13 @@ export const Handle = styled.div`
    cursor: pointer;
    box-shadow: 0 10px 30px ${({ theme }) => theme.colors.primary.strongCyan};
    user-select: none;
+   &:hover {
+      background-color: #7ae9df;
+   }
+   &:active {
+      background-color: #23aea1;
+      cursor: grab;
+   }
 `;
 export const RightArrow = styled.div`
    width: 0;

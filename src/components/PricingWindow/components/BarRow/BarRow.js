@@ -24,6 +24,7 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
    };
    const mouseMove = (e) => {
       if (dragging) {
+         document.body.style.cursor = "grab";
          const barWidth = emptyBarRef.current.getBoundingClientRect().width;
          const handlePosition = getHandlePosition(e.pageX, barWidth);
          const percent = handlePosition / barWidth;
@@ -33,12 +34,14 @@ const SliderRow = ({ handleBarStatus, numberOfOptions }) => {
          greenBarRef.current.style.width = `${handlePosition}px`;
       } else return;
    };
-   const handleMouseClick = (e) => {
-      dragging = true;
-   };
+   const handleMouseClick = (e) => (dragging = true);
+
    const initEvents = () => {
       window.addEventListener("mousemove", mouseMove);
-      window.addEventListener("mouseup", () => (dragging = false));
+      window.addEventListener("mouseup", () => {
+         dragging = false;
+         document.body.style.cursor = "auto";
+      });
    };
    initEvents();
    return (
