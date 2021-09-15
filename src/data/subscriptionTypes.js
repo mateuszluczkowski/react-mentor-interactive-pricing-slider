@@ -1,21 +1,21 @@
 const subscriptionTypes = {
-   1: {
+   0: {
       price: 8,
       pageviews: "10K",
    },
-   2: {
+   1: {
       price: 12,
       pageviews: "50K",
    },
-   3: {
+   2: {
       price: 16,
       pageviews: "100K",
    },
-   4: {
+   3: {
       price: 24,
       pageviews: "500K",
    },
-   5: {
+   4: {
       price: 36,
       pageviews: "1M",
    },

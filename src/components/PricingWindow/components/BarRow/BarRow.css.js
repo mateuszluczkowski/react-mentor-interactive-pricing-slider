@@ -3,10 +3,10 @@ export const Row = styled.div`
    display: flex;
    flex-basis: 100%;
 `;
-export const SliderRowWrapper = styled(Row)`
+export const BarWrapper = styled(Row)`
    padding: 25px 50px;
 `;
-export const Line = styled.div`
+export const Bar = styled.div`
    position: relative;
    flex-basis: 100%;
    display: flex;
@@ -14,12 +14,12 @@ export const Line = styled.div`
    height: 10px;
    background-color: ${({ theme }) => theme.colors.neutral.lightGrayishBlue};
 `;
-export const GreenLine = styled.div`
+export const GreenBar = styled.div`
    background-color: ${({ theme }) => theme.colors.primary.softCyan};
    border-radius: 10px;
    width: 0px;
 `;
-export const Circle = styled.div`
+export const Handle = styled.div`
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -35,6 +35,7 @@ export const Circle = styled.div`
    color: white;
    cursor: pointer;
    box-shadow: 0 10px 30px ${({ theme }) => theme.colors.primary.strongCyan};
+   user-select: none;
 `;
 export const RightArrow = styled.div`
    width: 0;
